@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Works and Auxiliary Systems</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lightbox/dist/css/lightbox.min.css"> <!-- Lightbox CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            margin: 0;
+            padding: 0; 
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+        }
+        .footer h3, .product-title {
+            font-family: 'Roboto Slab', serif;
+        }
+        /* Main navigation styling */
+        .nav-item {
+            position: relative;
+            display: inline-block;
+            padding: 10px 15px;
+        }
+
+        /* Dropdown styling */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%); /* Center the dropdown menu */
+            top: 100%;
+        }
+
+        /* Dropdown items styling */
+        .dropdown-menu a {
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            color: #5e6eff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        /* Hover effect for dropdown items */
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Show dropdown on hover */
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .top-banner {
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            background-color: #5e6eff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .contact-strip {
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        .logo-container {
+            text-align: center;
+            padding: 0px 0;
+        }
+
+        .logo {
+            max-width: 200px;
+        }
+
+        .tagline {
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            text-align: center;
+            font-style: italic;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .navbar {
+            background-color: #fff;
+            border-top: 2px solid #5e6eff;
+            border-bottom: 2px solid #5e6eff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: #5e6eff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            text-transform: uppercase;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .about-section {
+            background-color: #990000;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .mission-vision-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 10%;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .mission-vision-box {
+            flex: 1;
+            margin: 0 20px;
+            max-width: 300px;
+        }
+
+        .mission-vision-box h2 {
+            color: #990000;
+            border-bottom: 2px solid #990000;
+            padding-bottom: 10px;
+        }
+
+        .products-section {
+            background-color: #666;
+            padding: 30px 10%;
+            text-align: center;
+        }
+
+        .products-section h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            position: relative;
+            height: 250px;
+            perspective: 1000px;
+        }
+
+        .product-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .product-card:hover .product-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .product-card-front, .product-card-back {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .product-card-front {
+            background-color: #c1004f;
+            color: white;
+        }
+
+        .product-card-front img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            background-color: white;
+        }
+
+        .product-title {
+            padding: 15px 10px;
+            font-weight: bold;
+        }
+
+        .product-card-back {
+            background-color: #990000;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .view-button {
+            background-color: white;
+            color: #5e6eff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .view-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .footer {
+            background-color: #5e6eff;
+            color: white;
+            padding: 30px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer h3 {
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+
+        .copyright {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+        }
+
+        .copyright a {
+            color: #5e6eff;
+        }
+
+        @media (max-width: 768px) {
+            .mission-vision-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .mission-vision-box {
+                margin-bottom: 30px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        /* Adjust the navbar for mobile devices */
+        @media (max-width: 768px) {
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+            }
+        }
+
+        /* Adjust the hero section image for mobile devices */
+        @media (max-width: 768px) {
+            .hero-section img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Adjust the about section padding for mobile devices */
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 20px;
+            }
+        }
+
+        /* Adjust the mission-vision section for mobile devices */
+        @media (max-width: 768px) {
+            .mission-vision-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .mission-vision-box {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Adjust the products section for mobile devices */
+        @media (max-width: 768px) {
+            .products-section {
+                padding: 20px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .product-card {
+                height: auto;
+            }
+
+            .product-card-inner {
+                height: auto;
+            }
+
+            .product-card-front, .product-card-back {
+                height: auto;
+            }
+        }
+
+        /* Adjust the footer for mobile devices */
+        @media (max-width: 768px) {
+            .footer {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .footer-section {
+                margin-bottom: 20px;
+            }
+        }
+
+        .services-header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-top: 2px solid #5e6eff; /* Background color */
+            border-bottom: 2px solid #5e6eff; /* Divider */
+        }
+
+        .services-header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-banner">
+            <h1>Welcome to Rivermade One Person Corporation</h1>
+        </div>
+        <div class="contact-strip">
+            For faster transactions you may call 0956-0348672 or email us at rivermade.company@gmail.com
+        </div>
+        <div class="logo-container">
+            <img src="rivermade opc logo.jpg" alt="Rivermade Logo" class="logo">
+        </div>
+        <div class="tagline">
+            We Offer Solutions
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <div class="nav-item">
+                <a href="#">Distributorship</a>
+                <div class="dropdown-menu">
+                    <a href="lighting.html">Lighting Fixtures (LED, Solar Lights)</a>
+                    <a href="led-wall.html">LED Video Wall</a>
+                    <a href="video-processor.html">Video Processors</a>
+                    <a href="wpc.html">Wood Plastic Composite (WPC)</a>
+                    <a href="tents.html">Semi-Permanent Tents</a>
+                </div>
+            </div>
+    
+            <div class="nav-item">
+                <a href="#">Dealership</a>
+                <div class="dropdown-menu">
+                    <a href="repair-products.html">Repair Products</a>
+                    <a href="tile-adhesive.html">Tile Adhesive</a>
+                    <a href="skim-coat.html">Skim Coat</a>
+                    <a href="floor-coating.html">Floor Coating</a>
+                    <a href="waterproofing.html">Waterproofing</a>
+                    <a href="structural-grout.html">Structural Grout</a>
+                    <a href="admixtures.html">Admixture</a>
+                    <a href="bonding-agent.html">Bonding Agent</a>
+                    <a href="air-conditioners.html">ENERCOOL Air Conditioners</a>
+                </div>
+            </div>
+    
+            <div class="nav-item">
+                <a href="#" style="color:rgb(0, 17, 255);">Services</a>
+                <div class="dropdown-menu">
+                    <a href="#"> Energy & Industrial</a>
+                    <a href="#">Building & Infrastructure</a>
+                    <a href="general-construction.html">General Construction Contractor</a>
+                    <a href="electrical.html">Electrical Works and Auxiliary Systems</a>
+                    <a href="hvac.html" style="color:rgb(0, 17, 255);">HVAC, Fire Sprinklers, and Plumbing Systems</a>
+                    <a href="preventive.html">Preventive Maintenance Services</a>
+                    <a href="consultancy.html">Technical Consultancy Services</a>
+                    <a href="ledwall-installation.html"> LED Video Wall Installation & Configuration</a>
+                </div>
+            </div>
+            <a href="projects.html">Projects</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <img src="rivermade opc logo.jpg" alt="Services Banner">
+        </section>
+        <section class="services-header">
+            <h1>HVAC, Fire Sprinklers, and Plumbing Systems</h1>
+        </section>
+        <section class="gallery">
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 1">
+                    <img src="sample2.jpg" alt="Service 1">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 2">
+                    <img src="sample2.jpg" alt="Service 2">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 3">
+                    <img src="sample2.jpg" alt="Service 3">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 4">
+                    <img src="sample2.jpg" alt="Service 4">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 5">
+                    <img src="sample2.jpg" alt="Service 5">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 6">
+                    <img src="sample2.jpg" alt="Service 6">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 7">
+                    <img src="sample2.jpg" alt="Service 7">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 8">
+                    <img src="sample2.jpg" alt="Service 8">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 9">
+                    <img src="sample2.jpg" alt="Service 9">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 10">
+                    <img src="sample2.jpg" alt="Service 10">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="sample2.jpg" data-lightbox="services" data-title="Service 11">
+                    <img src="sample2.jpg" alt="Service 11">
+                    <div class="overlay">View</div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Rivermade One Person Corporation. All rights reserved.</p>
+    </footer>
+    <script src="lightbox/dist/js/lightbox-plus-jquery.min.js"></script> <!-- Lightbox JS -->
+</body>
+</html>
