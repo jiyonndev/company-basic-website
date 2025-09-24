@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <title>Contact US</title>
+    <title>Decorative Stones & Pebbles</title>
     <style>
         /* Updated CSS code */
         body {
@@ -189,7 +188,18 @@
             border-radius: 10px; /* Add rounded corners */
             overflow: hidden;
         }
-        .product-card-front {
+        .product-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .product-card:hover .product-card-inner {
+            transform: rotateY(180deg);
+        }
+        .product-card-front, .product-card-back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -207,7 +217,7 @@
 .product-card-front img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     margin: 0;
     padding: 0;
     background: none;
@@ -222,20 +232,25 @@
     right: 0;
     padding: 15px 10px;
     font-weight: bold;
-    background: rgba(94, 110, 255, 0.8);
+    background: rgba(94, 110, 255, 0.8); /* Semi-transparent blue background */
     margin: 0;
-    text-align: center; /* Add this to center the text */
-    display: flex; /* Add this for vertical centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
 }
 
 .product-description {
     display: none; /* Hide the description on the front side */
 }
-
-        /* Add new styles for the paragraphs inside product-card-back */
-
+        .product-card-back {
+            background-color: #5e6eff;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the height and width */
+            text-align: center; /* Center the text */
+        }
         .view-button {
             font-family: 'Roboto Condensed', Arial, sans-serif;
             background-color: white;
@@ -340,10 +355,21 @@
             .product-card-inner {
                 height: 100%;
             }
-            .product-card-front {
+            .product-card-front, .product-card-back {
                 height: 100%;
             }
+            .product-card-back {
+                padding: 30px; /* Increased padding */
+            }
+            .product-card-back h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
 
+            .product-card-back p {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
         }
         /* Adjust the footer for mobile devices */
         @media (max-width: 768px) {
@@ -676,81 +702,98 @@
             }
         }
         /*end of new css code adding*/
-        .map-container {
+.company-profile-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.company-profile-section h2 {
+    color: #5e6eff;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #5e6eff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(94, 110, 255, 0.3);
+}
+
+.download-button:hover {
+    background-color: #4751c5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(94, 110, 255, 0.4);
+}
+
+.download-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.download-button:hover .download-icon {
+    transform: translateY(2px);
+}
+
+@media (max-width: 768px) {
+    .company-profile-section {
+        padding: 30px 15px;
+    }
+    
+    .company-profile-section h2 {
+        font-size: 1.5rem;
+    }
+}
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95); /* Darkened background slightly */
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            font-family: 'Roboto Condensed', Arial, sans-serif;
-            text-align: center;
-            margin-bottom: 50px; /* Increase margin-bottom */
-        }
-
-        .map-container iframe {
-            width: 100%;
-            max-width: 600px;
-            height: 450px; /* Ensure the height matches the iframe height attribute */
-            border: 0;
-        }
-
-        @media (max-width: 768px) {
-            .contact-form input, .contact-form textarea {
-                width: 100%;
-            }
-
-            .map-container iframe {
-                width: 100%;
-                height: 300px;
-            }
-        }
-        /* Update the contact-form styles */
-        .contact-form {
-            font-family: 'Roboto Condensed', Arial, sans-serif;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            padding: 30px;
             box-sizing: border-box;
         }
 
-        .contact-form form {
-            width: 100%;
-            box-sizing: border-box;
+        .lightbox.active {
+            display: flex;
         }
 
-        .contact-form div {
-            margin-bottom: 20px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 2px solid #ddd;
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95dvh;
+            object-fit: contain;
+            margin: auto;
             border-radius: 4px;
-            font-family: 'Roboto', Arial, sans-serif;
-            box-sizing: border-box;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
 
-        .contact-form button {
-            background-color: #5e6eff;
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             color: white;
-            border: none;
-            padding: 12px 24px;
+            font-size: 30px;
             cursor: pointer;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .contact-form {
-                margin: 0 15px 30px;
-                padding: 20px;
-            }
+            background: none;
+            border: none;
+            padding: 10px;
         }
 .social-media-links {
     display: flex;
@@ -791,14 +834,14 @@
     <ul>
         <li><a href="index.html" >HOME</a></li>
         <li class="has-submenu">
-            <a href="#" class="submenu-toggle">DISTRIBUTORSHIP</a>
+            <a href="#" class="submenu-toggle" style="color:rgb(0, 17, 255);">DISTRIBUTORSHIP</a>
             <ul class="submenu">
                 <li><a href="lighting.html" >Lighting Fixtures</a></li>
-                <li><a href="led-wall.html">LED Video Wall</a></li>
+                <li><a href="led-wall.html" >LED Video Wall</a></li>
                 <li><a href="video-processor.html">Video Processors</a></li>
                 <li><a href="wpc.html">Wood Plastic Composite</a></li>
                 <li><a href="tents.html">Semi-Permanent Tents</a></li>
-                <li><a href="pebbles.html">Decorative Stones & Pebbles</a></li>
+                <li><a href="pebbles.html" style="color:rgb(0, 17, 255);">Decorative Stones & Pebbles</a></li>
                 <li><a href="irrigation.html">Irrigation System Products</a></li>
             </ul>
         </li>
@@ -819,7 +862,7 @@
         <li><a href="services.html">SERVICES</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
         <li><a href="events.html">EVENTS</a></li>
-        <li><a href="contactus.html" style="color:rgb(0, 17, 255);">CONTACT US</a></li>
+        <li><a href="contactus.html">CONTACT US</a></li>
     </ul>
 </div>
     <!-- Keep the hamburger icon outside of nav -->
@@ -831,20 +874,20 @@
         <nav class="navbar">
         <a href="index.html">Home</a>
         <div class="nav-item">
-            <a>Distributorship</a>
+            <a href="#">Distributorship</a>
             <div class="dropdown-menu">
                 <a href="lighting.html">Lighting Fixtures</a>
                 <a href="led-wall.html">LED Video Wall</a>
                 <a href="video-processor.html">Video Processors</a>
                 <a href="wpc.html">Wood Plastic Composite</a>
                 <a href="tents.html">Semi-Permanent Tents</a>
-                <a href="pebbles.html">Decorative Stones & Pebbles</a>
+                <a href="pebbles.html" style="color:rgb(0, 17, 255);">Decorative Stones & Pebbles</a>
                 <a href="irrigation.html">Irrigation System Products</a>
             </div>
         </div>
 
         <div class="nav-item">
-            <a>Dealership</a>
+            <a href="#">Dealership</a>
             <div class="dropdown-menu">
                 <a href="repair-products.html">Repair Products</a>
                 <a href="tile-adhesive.html">Tile Adhesive</a>
@@ -857,42 +900,265 @@
                 <a href="air-conditioners.html">ENERCOOL Air Conditioners</a>
             </div>
         </div>
-
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
         <a href="events.html">Events</a>
-        <a href="contactus.html" style="color:rgb(0, 17, 255);">Contact Us</a>
+        <a href="contactus.html">Contact Us</a>
     </nav>
     <!--End of new navigation menu code-->
     
-    <div class="page-title">
-        <h1>CONTACT US</h1>
+    <div class="hero-section">
+        
     </div>
-    <!-- Add this form in your contact-form section -->
-<section class="contact-form" style="max-width: 600px; margin: 0 auto; padding: 20px;">
-    <form id="contact-form" onsubmit="return sendMail(event)">
-        <div style="margin-bottom: 20px;">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px;">
-        </div>
-        <div style="margin-bottom: 20px;">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px;">
-        </div>
-        <div style="margin-bottom: 20px;">
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required style="width: 100%; padding: 8px; margin-top: 5px;">
-        </div>
-        <div style="margin-bottom: 20px;">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required style="width: 100%; height: 150px; padding: 8px; margin-top: 5px;"></textarea>
-        </div>
-        <button type="submit" style="background-color: #5e6eff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; border-radius: 4px;">Send Message</button>
-    </form>
+    <div class="page-title">
+        <h1>Decorative Stones & Pebbles</h1>
+    </div>
+<section>
+    <div class="products-section">
+        <h2>Rental & Stage Solutions (Indoor & Outdoor)</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/Ur1.png" alt="Structural Grout">
+                        <div class="product-title">RF Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>RF Series Hard Connection</h3>
+                        <p>Standard sizes: 500x500mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/1.png" alt="Structural Grout">
+                        <div class="product-title">UN Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>UN Series Soft Connection</h3>
+                        <p>Standard sizes: 500x500/500x1000mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/2.png" alt="Repair Products">
+                        <div class="product-title">UP Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>UP Series Hard Connection</h3>
+                        <p>Standard sizes: 500x500/500x1000mm (7.8/15.3kg)</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/3.png" alt="Floor Coatings & Hardeners">
+                        <div class="product-title">UR Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>UR Series Hard Connection</h3>
+                        <p>Standard sizes: 500x500/500x1000mm (7.8/15.3kg)</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+        <div class="product-card">
+            <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/4.png" alt="Structural Grout">
+                        <div class="product-title">UF Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>UF Series Flexible Rental</h3>
+                        <p>Standard sizes: 500x500mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/5.png" alt="Repair Products">
+                        <div class="product-title">UI Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>UI Series Hard Connection (Specially for India)</h3>
+                        <p>Standard sizes: 576x576mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/5TRANSPARENT.png" alt="Floor Coatings & Hardeners">
+                        <div class="product-title">Transparent Rental</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Transparent Rental</h3>
+                        <p>Standard sizes: 500x1000mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+    </section>
+
+<section>
+    <div class="products-section">
+        <h2>Outdoor Fixed Wall Solution</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/out1.png" alt="Structural Grout">
+                        <div class="product-title">US-FC Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Outdoor Energy Savings Screen</h3>
+                        <p>Standard sizes: 960x960mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/out2.png" alt="Repair Products">
+                        <div class="product-title">US-Fx Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Outdoor Aluminum back-door</h3>
+                        <p>Standard sizes: 960x960mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/out4.png" alt="Repair Products">
+                        <div class="product-title">US-Fs Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Outdoor Aluminum back-door</h3>
+                        <p>Standard sizes: 960x960mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/out3.png" alt="Floor Coatings & Hardeners">
+                        <div class="product-title">PN Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Outdoor Iron back-door</h3>
+                        <p>Standard sizes: 960x960mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
 </section>
-        <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4759.05822443202!2d121.0253454851904!3d14.213560650941986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7d0059090215%3A0x2cb70794061dc20a!2sRivermade%20OPC!5e1!3m2!1sen!2sph!4v1741758658983!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+
+<section>
+    <div class="products-section">
+        <h2>Indoor Fixed Wall Solution</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/in1.png" alt="Structural Grout">
+                        <div class="product-title">US-CB Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Indoor Fixed Wall "COB" Solution</h3>
+                        <p>Standard sizes: 600x337.5/600x675mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/in2.png" alt="Repair Products">
+                        <div class="product-title">US-TP Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Indoor Fixed Wall "SMD" Solution</h3>
+                        <p>Standard sizes: 600x337.5</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/in3.png" alt="Floor Coatings & Hardeners">
+                        <div class="product-title">US-KP Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Indoor Fixed Wall (small pitch of pixel)</h3>
+                        <p>Standard sizes: 640x480mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-inner">
+                    <div class="product-card-front">
+                        <img src="LED PANELS/t1.png" alt="Floor Coatings & Hardeners">
+                        <div class="product-title">UT Series</div>
+                        <div class="product-description"></div>
+                    </div>
+                    <div class="product-card-back">
+                        <h3>Indoor/Semi Outdoor Fixed Wall Transparent Solution</h3>
+                        <p>Standard sizes: 1000x500/1000x1000mm</p>
+                        <button class="view-button" data-url="lighting.html">View Image</button>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+</section>
+<section class="company-profile-section">
+    <h2>More Products</h2>
+    <a href="downloads\LED Products.pdf" download class="download-button">
+        Download Product Catalog
+        <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </svg>
+    </a>
+</section>
+
+
+
     <div class="footer">
         <div class="footer-section">
             <h3>About Rivermade OPC</h3>
@@ -915,39 +1181,88 @@
             </div>
         </div>
     </div>
-<div class="copyright">
-    Copyright © <a href="https://www.rivermadeopc.com">www.rivermadeopc.com</a> | All Rights Reserved 2021
-</div>
+    <div class="copyright">
+        Copyright © <a href="http://www.rivermadeopc.com">www.rivermadeopc.com</a> | All Rights Reserved 2021
+    </div>
 
-<script src="home.js"></script>  
+<script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
 <script>
-    (function() {
-        // Replace with your EmailJS public key
-        emailjs.init("eyzP_2s9HGazliBNr");
-    })();
+const container = document.getElementById('projectCardsContainer');
+const cards = Array.from(container.children);
+let cardsPerView = window.innerWidth < 900 ? 1 : 3;
+let currentIndex = 0;
 
-    function sendMail(e) {
-        e.preventDefault();
+function getCardWidth() {
+    return cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
+}
 
-        const params = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-
-        // Replace with your service ID and template ID from EmailJS
-        emailjs.send('service_mzxsovs', 'template_yfd6o16', params)
-            .then(function(response) {
-                alert('Message sent successfully!');
-                document.getElementById('contact-form').reset();
-            }, function(error) {
-                alert('Failed to send message. Please try again.');
-                console.log('Error:', error);
-            });
-
-        return false;
+function updateCarousel() {
+    cardsPerView = window.innerWidth < 900 ? 1 : 3;
+    if (currentIndex > cards.length - cardsPerView) {
+        currentIndex = Math.max(cards.length - cardsPerView, 0);
     }
+    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
+    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+document.getElementById('arrowLeft').onclick = function() {
+    currentIndex -= cardsPerView;
+    if (currentIndex < 0) currentIndex = 0;
+    updateCarousel();
+};
+document.getElementById('arrowRight').onclick = function() {
+    currentIndex += cardsPerView;
+    if (currentIndex > cards.length - cardsPerView) {
+        currentIndex = Math.max(cards.length - cardsPerView, 0);
+    }
+    updateCarousel();
+};
+
+window.addEventListener('resize', () => {
+    updateCarousel();
+});
+
+// Initialize on load
+updateCarousel();
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeButton = document.querySelector('.lightbox-close');
+
+    // Update your product card buttons to include data-image attribute
+    document.querySelectorAll('.view-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const cardImage = this.closest('.product-card-inner')
+                                .querySelector('.product-card-front img');
+            lightboxImage.src = cardImage.src;
+            lightbox.classList.add('active');
+        });
+    });
+
+    // Close lightbox when clicking close button or outside the image
+    closeButton.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
+});
+</script>
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="Lightbox Image" id="lightbox-image">
+</div>
 </body>
 </html>
