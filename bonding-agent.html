@@ -717,6 +717,45 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     background: #f0f0f0;
 }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95); /* Darkened background slightly */
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95dvh;
+            object-fit: contain;
+            margin: auto;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
 </style>
 </head>
 <body>
@@ -822,7 +861,7 @@
                     <div class="product-card-back">
                         <h3>Ultrabond SA</h3>
                         <p>Liquid Bonding Agent</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -836,7 +875,7 @@
                     <div class="product-card-back">
                         <h3>Ultrabond RB</h3>
                         <p>Epoxy Bonding Agent</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -850,7 +889,7 @@
                     <div class="product-card-back">
                         <h3>Ultrabond PSE</h3>
                         <p>Pile Splicing Epoxy</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -864,7 +903,7 @@
                     <div class="product-card-back">
                         <h3>Ultrabond CFE</h3>
                         <p>Carbon Fiber & Carbon Plate Primer & Binder</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -899,43 +938,43 @@
     </div>
 <script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
 <script>
-const container = document.getElementById('projectCardsContainer');
-const cards = Array.from(container.children);
-let cardsPerView = window.innerWidth < 900 ? 1 : 3;
-let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeButton = document.querySelector('.lightbox-close');
 
-function getCardWidth() {
-    return cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-}
+    // Update your product card buttons to include data-image attribute
+    document.querySelectorAll('.view-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const cardImage = this.closest('.product-card-inner')
+                                .querySelector('.product-card-front img');
+            lightboxImage.src = cardImage.src;
+            lightbox.classList.add('active');
+        });
+    });
 
-function updateCarousel() {
-    cardsPerView = window.innerWidth < 900 ? 1 : 3;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-}
+    // Close lightbox when clicking close button or outside the image
+    closeButton.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
 
-document.getElementById('arrowLeft').onclick = function() {
-    currentIndex -= cardsPerView;
-    if (currentIndex < 0) currentIndex = 0;
-    updateCarousel();
-};
-document.getElementById('arrowRight').onclick = function() {
-    currentIndex += cardsPerView;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    updateCarousel();
-};
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
 
-window.addEventListener('resize', () => {
-    updateCarousel();
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
 });
-
-// Initialize on load
-updateCarousel();
 </script>
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="Lightbox Image" id="lightbox-image">
+</div>
 </body>
 </html>

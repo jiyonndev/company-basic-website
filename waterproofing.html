@@ -717,6 +717,45 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     background: #f0f0f0;
 }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95); /* Darkened background slightly */
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95dvh;
+            object-fit: contain;
+            margin: auto;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
 </style>
 </head>
 <body>
@@ -822,7 +861,7 @@
                     <div class="product-card-back">
                         <h3>Hydroproof WPC</h3>
                         <p>Waterproofing by Cystallizationg</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -836,7 +875,7 @@
                     <div class="product-card-back">
                         <h3>Hydroproof Flex 100</h3>
                         <p>Flexible Cementitious Waterproofing</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -850,7 +889,7 @@
                     <div class="product-card-back">
                         <h3>Hydroproof WR</h3>
                         <p>Silane Siloxane Based Water Repellent</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -865,7 +904,7 @@
                     <div class="product-card-back">
                         <h3>Hydroproof IW</h3>
                         <p>Integral Waterproofing</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -880,7 +919,7 @@
                     <div class="product-card-back">
                         <h3>Hydroguard PU-H</h3>
                         <p>Polyurethane Hybrid Elastomeric Waterproofing</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -895,7 +934,7 @@
                     <div class="product-card-back">
                         <h3>Hydroproof Plug-P</h3>
                         <p>Rapid Setting Water Plug</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -910,7 +949,7 @@
                 <div class="product-card-back">
                     <h3>Skybird Elastomeric Paint</h3>
                     <p>High Performance Pure Acrylic Elastomeric Coating</p>
-                    
+                    <button class="view-button" data-url="lighting.html">View Image</button>
                 </div>
                 </div>
             </div>
@@ -925,7 +964,7 @@
                 <div class="product-card-back">
                     <h3>Agila Waterproofing</h3>
                     <p>Hydrophobic Integral Waterproofing</p>
-                    
+                    <button class="view-button" data-url="lighting.html">View Image</button>
                 </div>
                 </div>
             </div>
@@ -940,7 +979,7 @@
                     <div class="product-card-back">
                         <h3>Floortech PU</h3>
                         <p>UV Resistant Polyurethane Coating for Concrete and Steel</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -955,7 +994,7 @@
                     <div class="product-card-back">
                         <h3>Floortech TLE</h3>
                         <p>Non-Toxic Tank Lining</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -970,7 +1009,7 @@
                     <div class="product-card-back">
                         <h3>Floortech Primer SB</h3>
                         <p>Solvent Based Epoxy Primer</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -1003,43 +1042,43 @@
     </div>
 <script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
 <script>
-const container = document.getElementById('projectCardsContainer');
-const cards = Array.from(container.children);
-let cardsPerView = window.innerWidth < 900 ? 1 : 3;
-let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeButton = document.querySelector('.lightbox-close');
 
-function getCardWidth() {
-    return cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-}
+    // Update your product card buttons to include data-image attribute
+    document.querySelectorAll('.view-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const cardImage = this.closest('.product-card-inner')
+                                .querySelector('.product-card-front img');
+            lightboxImage.src = cardImage.src;
+            lightbox.classList.add('active');
+        });
+    });
 
-function updateCarousel() {
-    cardsPerView = window.innerWidth < 900 ? 1 : 3;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-}
+    // Close lightbox when clicking close button or outside the image
+    closeButton.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
 
-document.getElementById('arrowLeft').onclick = function() {
-    currentIndex -= cardsPerView;
-    if (currentIndex < 0) currentIndex = 0;
-    updateCarousel();
-};
-document.getElementById('arrowRight').onclick = function() {
-    currentIndex += cardsPerView;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    updateCarousel();
-};
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
 
-window.addEventListener('resize', () => {
-    updateCarousel();
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
 });
-
-// Initialize on load
-updateCarousel();
 </script>
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="Lightbox Image" id="lightbox-image">
+</div>
 </body>
 </html>

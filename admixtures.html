@@ -717,6 +717,45 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     background: #f0f0f0;
 }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95); /* Darkened background slightly */
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95dvh;
+            object-fit: contain;
+            margin: auto;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
 </style>
 </head>
 <body>
@@ -822,7 +861,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 10R</h3>
                         <p>Retarding Admixture Type D&G 1,500 to 3,500 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -836,7 +875,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 25MR</h3>
                         <p>Superior Pumping/Finishing Admixture Type D&G 1,500 to 4,500 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -850,7 +889,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 30HR</h3>
                         <p>Polycarboxylated Ether Based Superplasticiser Type D&G 1,500 to 4,000 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -864,7 +903,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 50HR</h3>
                         <p>High Range Water Reducing Admixture Type D&G 1,500 to 5,500 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -878,7 +917,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 75HR</h3>
                         <p>High Range Water Reducing & Retarding Admix Type D&G 1,500 to 6,000 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -892,7 +931,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 90HR</h3>
                         <p>Polycarboxylated Ether Based Superplasticiser Type D&G 5,000 to 7,000 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -906,7 +945,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 100HE</h3>
                         <p>High Early Strength Water Reducing Admix Type F 1,000 to 6,500 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -920,7 +959,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 100P</h3>
                         <p>High-Range Water Reducing Superplasticizer Power Admixture</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -935,7 +974,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 600HPA</h3>
                         <p>High Performance Admixture for RMC Type D&G 1, 500 to 6,000 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -950,7 +989,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 800HPA</h3>
                         <p>A Wide-Range Superplasticer for RMC Type D&G 1,500 to 7,000 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -965,7 +1004,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 1200HPA</h3>
                         <p>New Generation Hyperplasticiser Type D&G, 14,000 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -980,7 +1019,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 1500HPA</h3>
                         <p>New Generation Hyperplasticing Admixture Type F 18Hrs of CF (14 bags) 2,500 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -995,7 +1034,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 1700HPA</h3>
                         <p>New Generation Hyperplasticing Admixture Type F 18Hrs of CF (14 bags) 2,500 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -1010,7 +1049,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast 2500HPA</h3>
                         <p>New Generation Hyperplasticing Admixture Type F 18Hrs of CF (14 bags) 3,500 PSI</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -1025,7 +1064,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast UW</h3>
                         <p>Anti Wash-out, Underwater Concrete Epoxy</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -1040,7 +1079,7 @@
                     <div class="product-card-back">
                         <h3>Skyplast SA</h3>
                         <p>Shortcrete Accelarator</p>
-                        
+                        <button class="view-button" data-url="lighting.html">View Image</button>
                     </div>
                 </div>
             </div>
@@ -1076,43 +1115,43 @@
 
 <script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
 <script>
-const container = document.getElementById('projectCardsContainer');
-const cards = Array.from(container.children);
-let cardsPerView = window.innerWidth < 900 ? 1 : 3;
-let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeButton = document.querySelector('.lightbox-close');
 
-function getCardWidth() {
-    return cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-}
+    // Update your product card buttons to include data-image attribute
+    document.querySelectorAll('.view-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const cardImage = this.closest('.product-card-inner')
+                                .querySelector('.product-card-front img');
+            lightboxImage.src = cardImage.src;
+            lightbox.classList.add('active');
+        });
+    });
 
-function updateCarousel() {
-    cardsPerView = window.innerWidth < 900 ? 1 : 3;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-}
+    // Close lightbox when clicking close button or outside the image
+    closeButton.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
 
-document.getElementById('arrowLeft').onclick = function() {
-    currentIndex -= cardsPerView;
-    if (currentIndex < 0) currentIndex = 0;
-    updateCarousel();
-};
-document.getElementById('arrowRight').onclick = function() {
-    currentIndex += cardsPerView;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    updateCarousel();
-};
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
 
-window.addEventListener('resize', () => {
-    updateCarousel();
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
 });
-
-// Initialize on load
-updateCarousel();
 </script>
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="Lightbox Image" id="lightbox-image">
+</div>
 </body>
 </html>
