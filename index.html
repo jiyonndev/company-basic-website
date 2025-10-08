@@ -787,6 +787,67 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     background: #f0f0f0;
 }
+
+
+/* credibility css*/
+.credibility {
+  padding: 60px 10%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #0a1a4f;
+  background: #fff;
+}
+
+.credibility h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #5e6eff;
+}
+
+.credibility h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #12286d;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.logos img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logos img:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ Add spacing between sections */
+.accreditations {
+  margin-bottom: 80px;  /* <— Adjust this value as needed */
+}
+
+/* Optional: responsive tweak */
+@media (max-width: 768px) {
+  .logos img {
+    height: 50px;
+  }
+
+  .accreditations {
+    margin-bottom: 80px;
+  }
+}
+
+/* clientele css end */
 </style>    
 </head>
 <body>
@@ -1260,6 +1321,41 @@
 
 <!-- Remove the extra closing divs -->
 
+<section class="credibility">
+  
+
+  <div class="accreditations">
+    <h2>ACCREDITATIONS</h2>
+    <div class="logos">
+      <img src="accreditations\Dun_and_Bradstreet_wordmark.svg.png" alt="Dun and Bradstreet">
+      <img src="accreditations\EEI_Corporation.png" alt="JGC">
+      <img src="accreditations\Picture2.png" alt="Cebu Land Masters">
+      <img src="accreditations\Picture3.jpg" alt="SMDC">
+      <img src="accreditations\Picture4.jpg" alt="Torre Lorenzo">
+      <img src="accreditations\Picture5.jpg" alt="Federal Land">
+      <img src="accreditations\Picture6.jpg" alt="Megaworld">
+    </div>
+  </div>
+
+  <div class="clients">
+    <h2>CLIENTS</h2>
+    <div class="logos">
+      <img src="clients\Ayala_Land_logo.svg.png" alt="Condura">
+      <img src="clients\Ayala_Malls_Logo_(1).png" alt="Daikin">
+      <img src="clients\ayalaland-holdings-logo1.png" alt="DHL">
+      <img src="clients\ogc mgmt inc.jpg" alt="IRIS">
+      <img src="clients\Picture10.jpg" alt="Calcutta Medical Center">
+      <img src="clients\Picture12.jpg" alt="Calcutta Medical Center">
+      <img src="clients\Picture13.png" alt="Calcutta Medical Center">
+      <img src="clients\Security_Bank_logo.svg.png" alt="SECURITY BANK">
+      <img src="clients\SOCOTEC-LOGO.png" alt="SOCOTECT">
+    </div>
+  </div>
+</section>
+
+
+
+
     <div class="footer">
         <div class="footer-section">
             <h3>About Rivermade OPC</h3>
@@ -1286,9 +1382,6 @@
         </div>
     </div>
     
-    <div class="copyright">
-        Copyright © <a href="http://www.rivermadeopc.com">www.rivermadeopc.com</a> | All Rights Reserved 2021
-    </div>
 
 <script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
 <script>
