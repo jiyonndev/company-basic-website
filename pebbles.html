@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <title>Decorative Stones & Pebbles</title>
     <style>
@@ -13,7 +14,7 @@
             margin: 0;
             padding: 0;
             color: #333;
-            padding-top: 60px; /* Adjust for fixed navbar height */
+            padding-top: 60px;
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Roboto Condensed', Arial, sans-serif;
@@ -115,7 +116,7 @@
             text-transform: uppercase;
         }
         .hero-section {
-            background-image: url('LED PANELS/ledlogo.png');
+            background-image: url('TENTS/tentlogo.png');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -262,6 +263,11 @@
             box-sizing: border-box; /* Ensure padding is included in the height and width */
             text-align: center; /* Center the text */
         }
+        .product-card-back p {
+            margin: 5px 0; /* Reduce margin between paragraphs */
+            line-height: 1.2; /* Reduce line height */
+            padding: 0; /* Remove padding */
+        }
         .view-button {
             font-family: 'Roboto Condensed', Arial, sans-serif;
             background-color: white;
@@ -380,6 +386,9 @@
             .product-card-back p {
                 font-size: 1.1rem;
                 margin-bottom: 20px;
+                margin: 5px 0; /* Reduce margin between paragraphs */
+                line-height: 1.2; /* Reduce line height */
+                padding: 0; /* Remove padding */
             }
         }
         /* Adjust the footer for mobile devices */
@@ -686,6 +695,13 @@
             background: rgba(255, 255, 255, 0.3);
             border-radius: 3px;
         }
+        .off-screen-menu .submenu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+        .off-screen-menu .submenu li:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
         .off-screen-menu > ul > li > a {
             font-size: 1.4rem;
             transition: all 0.2s ease;
@@ -694,13 +710,6 @@
         .off-screen-menu > ul > li > a:hover {
             background-color: rgba(255, 255, 255, 0.1);
             letter-spacing: 1px;
-        }
-        .off-screen-menu .submenu a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateX(10px);
-        }
-        .off-screen-menu .submenu li:not(:last-child) {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         @keyframes slideDown {
             from {
@@ -767,6 +776,30 @@
         font-size: 1.5rem;
     }
 }
+.social-media-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    color: #5e6eff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background: #f0f0f0;
+}
         .lightbox {
             display: none;
             position: fixed;
@@ -806,30 +839,41 @@
             border: none;
             padding: 10px;
         }
-.social-media-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
+/* --- Gallery Section --- */
+.gallery-section {
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
 }
 
-.social-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: white;
-    border-radius: 50%;
-    color: #5e6eff;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.gallery-title {
+  color: #4a63ff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.social-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    background: #f0f0f0;
+/* --- Image Grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
 }
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+/*new gallery css end*/
     </style>
 </head>
 <body>
@@ -848,14 +892,12 @@
             <a href="#" class="submenu-toggle" style="color:rgb(0, 17, 255);">DISTRIBUTORSHIP</a>
             <ul class="submenu">
                 <li><a href="lighting.html" >Lighting Fixtures</a></li>
-                <li><a href="led-wall.html" >LED Video Wall</a></li>
+                <li><a href="led-wall.html">LED Video Wall</a></li>
                 <li><a href="video-processor.html">Video Processors</a></li>
                 <li><a href="wpc.html">Wood Plastic Composite</a></li>
                 <li><a href="tents.html">Semi-Permanent Tents</a></li>
                 <li><a href="pebbles.html" style="color:rgb(0, 17, 255);">Decorative Stones & Pebbles</a></li>
-                <!--
                 <li><a href="irrigation.html">Irrigation System Products</a></li>
-                -->
             </ul>
         </li>
         <li class="has-submenu">
@@ -887,7 +929,7 @@
         <nav class="navbar">
         <a href="index.html">Home</a>
         <div class="nav-item">
-            <a href="#">Distributorship</a>
+            <a href="#" style="color:rgb(0, 17, 255);">Distributorship</a>
             <div class="dropdown-menu">
                 <a href="lighting.html">Lighting Fixtures</a>
                 <a href="led-wall.html">LED Video Wall</a>
@@ -895,9 +937,7 @@
                 <a href="wpc.html">Wood Plastic Composite</a>
                 <a href="tents.html">Semi-Permanent Tents</a>
                 <a href="pebbles.html" style="color:rgb(0, 17, 255);">Decorative Stones & Pebbles</a>
-                <!--
                 <a href="irrigation.html">Irrigation System Products</a>
-                -->
             </div>
         </div>
 
@@ -929,32 +969,26 @@
     <div class="page-title">
         <h1>Decorative Stones & Pebbles</h1>
     </div>
-<section>
-    <div class="products-section">
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="images\pebble1.jpg" alt="Pebbles">
-                        <div class="product-title">Pebbles</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        
-                        <p>Durable and natural decorative pebbles perfect for landscaping, garden accents, pathways, and indoor or outdoor designs, adding texture and a stylish natural look</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-            
-    </section>
 
-<!--End of new navigation menu code
+
+<section class="sample-gallery">
+  
+  <div class="gallery-grid">
+    <img src="pebbles\pebble7.jpg" alt="Sample 1" class="clickable-img">
+    <img src="pebbles\pebble1.jpg" alt="Sample 2" class="clickable-img">
+    <img src="pebbles\pebble2.jpg" alt="Sample 3" class="clickable-img">
+    <img src="pebbles\pebble4.jpg" alt="Sample 4" class="clickable-img">
+    <img src="pebbles\pebble6.jpg" alt="Sample 5" class="clickable-img">
+    <img src="pebbles\pebble3.jpg" alt="Sample 5" class="clickable-img">
+    <img src="pebbles\pebble5.jpg" alt="Sample 5" class="clickable-img">
+    
+  </div>
+</section>
+
+<!--deleted download catalog button section
 <section class="company-profile-section">
     <h2>More Products</h2>
-    <a href="downloads\LED Products.pdf" download class="download-button">
+    <a href="downloads\Tents Products.pdf" download class="download-button">
         Download Product Catalog
         <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
             <path fill="none" d="M0 0h24v24H0z"/>
@@ -963,6 +997,8 @@
     </a>
 </section>
 -->
+
+
 
 
 
@@ -993,51 +1029,13 @@
 
 <script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
 <script>
-const container = document.getElementById('projectCardsContainer');
-const cards = Array.from(container.children);
-let cardsPerView = window.innerWidth < 900 ? 1 : 3;
-let currentIndex = 0;
-
-function getCardWidth() {
-    return cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-}
-
-function updateCarousel() {
-    cardsPerView = window.innerWidth < 900 ? 1 : 3;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-}
-
-document.getElementById('arrowLeft').onclick = function() {
-    currentIndex -= cardsPerView;
-    if (currentIndex < 0) currentIndex = 0;
-    updateCarousel();
-};
-document.getElementById('arrowRight').onclick = function() {
-    currentIndex += cardsPerView;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    updateCarousel();
-};
-
-window.addEventListener('resize', () => {
-    updateCarousel();
-});
-
-// Initialize on load
-updateCarousel();
-</script>
-<script>
 document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.clickable-img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const closeButton = document.querySelector('.lightbox-close');
 
-    // Update your product card buttons to include data-image attribute
+    // ✅ Existing feature: open lightbox from "View" button in product cards
     document.querySelectorAll('.view-button').forEach(button => {
         button.addEventListener('click', function() {
             const cardImage = this.closest('.product-card-inner')
@@ -1047,7 +1045,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close lightbox when clicking close button or outside the image
+    // ✅ NEW FEATURE: open lightbox when any .clickable-img is clicked
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImage.src = img.src;
+            lightbox.classList.add('active');
+        });
+    });
+
+    // ✅ Close lightbox when clicking close button or outside image
     closeButton.addEventListener('click', () => {
         lightbox.classList.remove('active');
     });
@@ -1058,13 +1064,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close lightbox with Escape key
+    // ✅ Close lightbox with Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightbox.classList.contains('active')) {
             lightbox.classList.remove('active');
         }
     });
 });
+
 </script>
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close">&times;</button>

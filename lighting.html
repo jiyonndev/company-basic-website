@@ -876,9 +876,7 @@
                 <a href="wpc.html">Wood Plastic Composite</a>
                 <a href="tents.html">Semi-Permanent Tents</a>
                 <a href="pebbles.html">Decorative Stones & Pebbles</a>
-                <!--
                 <a href="irrigation.html">Irrigation System Products</a>
-                -->
             </div>
         </div>
 
@@ -1054,45 +1052,6 @@
 
 
 <script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
-<script>
-const container = document.getElementById('projectCardsContainer');
-const cards = Array.from(container.children);
-let cardsPerView = window.innerWidth < 900 ? 1 : 3;
-let currentIndex = 0;
-
-function getCardWidth() {
-    return cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-}
-
-function updateCarousel() {
-    cardsPerView = window.innerWidth < 900 ? 1 : 3;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(container).gap || 32);
-    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-}
-
-document.getElementById('arrowLeft').onclick = function() {
-    currentIndex -= cardsPerView;
-    if (currentIndex < 0) currentIndex = 0;
-    updateCarousel();
-};
-document.getElementById('arrowRight').onclick = function() {
-    currentIndex += cardsPerView;
-    if (currentIndex > cards.length - cardsPerView) {
-        currentIndex = Math.max(cards.length - cardsPerView, 0);
-    }
-    updateCarousel();
-};
-
-window.addEventListener('resize', () => {
-    updateCarousel();
-});
-
-// Initialize on load
-updateCarousel();
-</script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const lightbox = document.getElementById('lightbox');

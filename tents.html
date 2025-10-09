@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <title>Semi-Permanent Tents</title>
     <style>
@@ -838,6 +839,41 @@
             border: none;
             padding: 10px;
         }
+/* --- Gallery Section --- */
+.gallery-section {
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.gallery-title {
+  color: #4a63ff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* --- Image Grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+/*new gallery css end*/
     </style>
 </head>
 <body>
@@ -861,9 +897,7 @@
                 <li><a href="wpc.html">Wood Plastic Composite</a></li>
                 <li><a href="tents.html" style="color:rgb(0, 17, 255);">Semi-Permanent Tents</a></li>
                 <li><a href="pebbles.html">Decorative Stones & Pebbles</a></li>
-                <!--
                 <li><a href="irrigation.html">Irrigation System Products</a></li>
-                -->
             </ul>
         </li>
         <li class="has-submenu">
@@ -903,9 +937,7 @@
                 <a href="wpc.html">Wood Plastic Composite</a>
                 <a href="tents.html" style="color:rgb(0, 17, 255);">Semi-Permanent Tents</a>
                 <a href="pebbles.html">Decorative Stones & Pebbles</a>
-                <!--
                 <a href="irrigation.html">Irrigation System Products</a>
-                -->
             </div>
         </div>
 
@@ -937,109 +969,19 @@
     <div class="page-title">
         <h1>Semi-Permanent Tents</h1>
     </div>
-<section>
-    <div class="products-section">
-        <!--H2 Semi-Permanent Tents Products H2-->
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="TENTS\tent-glamping-night.jpg" alt="WPC">
-                        <div class="product-title">W-3</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>W-3</h3>
-                        <p>Overall Size: 3x3m</p>
-                        <p>Overall Area: 9m²</p>
-                        <p><em>"Product Image for Sample Only"</em></p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="TENTS\tent-glamping-night.jpg" alt="WPC">
-                        <div class="product-title">W-37</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>W-37</h3>
-                        <p>Overall Size: 3.7x4m</p>
-                        <p>Overall Area: 14.8m²</p>
-                        <p><em>"Product Image for Sample Only"</em></p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="TENTS\tent-glamping-night.jpg" alt="WPC">
-                        <div class="product-title">W-15</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>W-15</h3>
-                        <p>Overall Size: 8x15m</p>
-                        <p>Overall Area: 120m²</p>
-                        <p><em>"Product Image for Sample Only"</em></p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-        <div class="product-card">
-            <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="TENTS\tent-glamping-night.jpg" alt="WPC">
-                        <div class="product-title">X-26</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>X-26</h3>
-                        <p>Overall Size: 5.1x5.1m</p>
-                        <p>Overall Area: 26m²</p>
-                        <p><em>"Product Image for Sample Only"</em></p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="TENTS\tent-glamping-night.jpg" alt="WPC">
-                        <div class="product-title">S-24</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>S-24</h3>
-                        <p>Overall Size: 4x6m</p>
-                        <p>Overall Area: 24m²</p>
-                        <p><em>"Product Image for Sample Only"</em></p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="TENTS\tent-glamping-night.jpg" alt="WPC">
-                        <div class="product-title">S1-54</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>S1-54</h3>
-                        <p>Overall Size: 5x9+3x3.2m</p>
-                        <p>Overall Area: 54.6m²</p>
-                        <p><em>"Product Image for Sample Only"</em></p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
+<section class="sample-gallery">
+  
+  <div class="gallery-grid">
+    <img src="tent\tent1.jpg" alt="Sample 1" class="clickable-img">
+    <img src="tent\tent2.jpg" alt="Sample 2" class="clickable-img">
+    <img src="tent\tent3.jpg" alt="Sample 3" class="clickable-img">
+    <img src="tent\tent4.jpg" alt="Sample 4" class="clickable-img">
+    <img src="tent\tent5.jpg" alt="Sample 5" class="clickable-img">
+  </div>
+</section>
+
 <!--deleted download catalog button section
 <section class="company-profile-section">
     <h2>More Products</h2>
@@ -1085,11 +1027,12 @@
 <script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.clickable-img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const closeButton = document.querySelector('.lightbox-close');
 
-    // Update your product card buttons to include data-image attribute
+    // ✅ Existing feature: open lightbox from "View" button in product cards
     document.querySelectorAll('.view-button').forEach(button => {
         button.addEventListener('click', function() {
             const cardImage = this.closest('.product-card-inner')
@@ -1099,7 +1042,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close lightbox when clicking close button or outside the image
+    // ✅ NEW FEATURE: open lightbox when any .clickable-img is clicked
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImage.src = img.src;
+            lightbox.classList.add('active');
+        });
+    });
+
+    // ✅ Close lightbox when clicking close button or outside image
     closeButton.addEventListener('click', () => {
         lightbox.classList.remove('active');
     });
@@ -1110,13 +1061,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close lightbox with Escape key
+    // ✅ Close lightbox with Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightbox.classList.contains('active')) {
             lightbox.classList.remove('active');
         }
     });
 });
+
 </script>
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close">&times;</button>

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
-    <title>Enercool Air Conditioners</title>
-<style>
+    <title>Irrigation System Products</title>
+    <style>
         /* Updated CSS code */
         body {
             font-family: 'Roboto', Arial, sans-serif;
@@ -14,7 +15,6 @@
             padding: 0;
             color: #333;
             padding-top: 60px;
-            
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Roboto Condensed', Arial, sans-serif;
@@ -68,10 +68,24 @@
         .nav-item:hover .dropdown-menu {
             display: block;
         }
+        .top-banner {
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            background-color: #5e6eff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .contact-strip {
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            background-color: #5e6eff;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+        }
         .logo-container {
             text-align: center;
-            padding: 10px 0; /* Reduced padding */
-            margin: 0; /* Remove margin */
+            padding: 15px 0;
         }
         .logo {
             max-width: 150px;
@@ -102,14 +116,14 @@
             text-transform: uppercase;
         }
         .hero-section {
-            background-image: url('skybird products/ener logo.png');
+            background-image: url('TENTS/tentlogo.png');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             height: 250px;
             width: 300px;
-            margin: 10px auto; /* Reduced top/bottom margin */
-            display: block;
+            margin: 30px auto; /* Add this line to center the element */
+            display: block; /* Add this line to ensure proper centering */
         }
         
         /* Update the image styling if needed */
@@ -149,7 +163,8 @@
             padding: 20px 0;
         }
         .products-section h2 {
-            color: white;
+            color: #5e6eff;
+            text-align:center;
             margin-bottom: 30px;
         }
         .product-grid {
@@ -214,7 +229,7 @@
 .product-card-front img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     margin: 0;
     padding: 0;
     background: none;
@@ -247,6 +262,11 @@
             padding: 20px;
             box-sizing: border-box; /* Ensure padding is included in the height and width */
             text-align: center; /* Center the text */
+        }
+        .product-card-back p {
+            margin: 5px 0; /* Reduce margin between paragraphs */
+            line-height: 1.2; /* Reduce line height */
+            padding: 0; /* Remove padding */
         }
         .view-button {
             font-family: 'Roboto Condensed', Arial, sans-serif;
@@ -297,7 +317,17 @@
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
         }
-        /* Adjust the navbar for mobile devices *
+        /* Adjust the navbar for mobile devices */
+        @media (max-width: 768px) {
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar a {
+                margin: 10px 0;
+            }
+        }
         /* Adjust the hero section image for mobile devices */
         @media (max-width: 768px) {
             .hero-section img {
@@ -356,6 +386,9 @@
             .product-card-back p {
                 font-size: 1.1rem;
                 margin-bottom: 20px;
+                margin: 5px 0; /* Reduce margin between paragraphs */
+                line-height: 1.2; /* Reduce line height */
+                padding: 0; /* Remove padding */
             }
         }
         /* Adjust the footer for mobile devices */
@@ -383,7 +416,8 @@
             font-size: 2rem;
             font-weight: bold;
         }
-        /* Add this to your existing CSS */
+
+        /*new css code adding*/
         @media (max-width: 768px) {
             .navbar {
                 display: none;  /* Hide the navbar container */
@@ -412,7 +446,6 @@
                 padding-top: 0;
             }
         }
-        /* Remove this: */
         /* ...existing code... */
         /* hamburger css */
         .off-screen-menu {
@@ -662,6 +695,13 @@
             background: rgba(255, 255, 255, 0.3);
             border-radius: 3px;
         }
+        .off-screen-menu .submenu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+        .off-screen-menu .submenu li:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
         .off-screen-menu > ul > li > a {
             font-size: 1.4rem;
             transition: all 0.2s ease;
@@ -670,13 +710,6 @@
         .off-screen-menu > ul > li > a:hover {
             background-color: rgba(255, 255, 255, 0.1);
             letter-spacing: 1px;
-        }
-        .off-screen-menu .submenu a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateX(10px);
-        }
-        .off-screen-menu .submenu li:not(:last-child) {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         @keyframes slideDown {
             from {
@@ -689,6 +722,60 @@
             }
         }
         /*end of new css code adding*/
+.company-profile-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.company-profile-section h2 {
+    color: #5e6eff;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #5e6eff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(94, 110, 255, 0.3);
+}
+
+.download-button:hover {
+    background-color: #4751c5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(94, 110, 255, 0.4);
+}
+
+.download-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.download-button:hover .download-icon {
+    transform: translateY(2px);
+}
+
+@media (max-width: 768px) {
+    .company-profile-section {
+        padding: 30px 15px;
+    }
+    
+    .company-profile-section h2 {
+        font-size: 1.5rem;
+    }
+}
 .social-media-links {
     display: flex;
     gap: 15px;
@@ -752,7 +839,74 @@
             border: none;
             padding: 10px;
         }
-</style>
+/* --- Gallery Section --- */
+.gallery-section {
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.gallery-title {
+  color: #4a63ff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* --- Image Grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+/*new gallery css end*/
+.fullwidth-image-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto; /* centers and adds spacing from other sections */
+  text-align: center;
+}
+
+.fullwidth-image-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4a60ff; /* accent color */
+  margin-bottom: 20px; /* <-- spacing between title and image */
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+
+.fullwidth-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 768px) {
+  .fullwidth-image-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+}
+
+    </style>
 </head>
 <body>
     <div class="logo-container">
@@ -762,11 +916,12 @@
         We Offer Solutions
     </div>
 
-    <div class="off-screen-menu">
+<!--Start of new navigation menu code-->
+<div class="off-screen-menu">
     <ul>
         <li><a href="index.html" >HOME</a></li>
         <li class="has-submenu">
-            <a href="#" class="submenu-toggle">DISTRIBUTORSHIP</a>
+            <a href="#" class="submenu-toggle" style="color:rgb(0, 17, 255);">DISTRIBUTORSHIP</a>
             <ul class="submenu">
                 <li><a href="lighting.html" >Lighting Fixtures</a></li>
                 <li><a href="led-wall.html">LED Video Wall</a></li>
@@ -774,22 +929,22 @@
                 <li><a href="wpc.html">Wood Plastic Composite</a></li>
                 <li><a href="tents.html">Semi-Permanent Tents</a></li>
                 <li><a href="pebbles.html">Decorative Stones & Pebbles</a></li>
-                <li><a href="irrigation.html">Irrigation System Products</a></li>
-
+                <li><a href="irrigation.html" style="color:rgb(0, 17, 255);">Irrigation System Products</a></li>
+                
             </ul>
         </li>
         <li class="has-submenu">
-            <a href="#" class="submenu-toggle" style="color:rgb(0, 17, 255);">DEALERSHIP</a>
+            <a href="#" class="submenu-toggle">DEALERSHIP</a>
             <ul class="submenu">
                 <li><a href="repair-products.html">Repair Products</a></li>
                 <li><a href="tile-adhesive.html">Tile Adhesive</a></li>
                 <li><a href="skim-coat.html">Skim Coat</a></li>
                 <li><a href="floor-coating.html">Floor Coating</a></li>
-                <li><a href="waterproofing.html" >Waterproofing</a></li>
+                <li><a href="waterproofing.html">Waterproofing</a></li>
                 <li><a href="structural-grout.html">Structural Grout</a></li>
                 <li><a href="admixtures.html">Admixture</a></li>
                 <li><a href="bonding-agent.html">Bonding Agent</a></li>
-                <li><a href="air-conditioners.html" style="color:rgb(0, 17, 255);">ENERCOOL Air Conditioners</a></li>
+                <li><a href="air-conditioners.html">ENERCOOL Air Conditioners</a></li>
             </ul>
         </li>
         <li><a href="services.html">SERVICES</a></li>
@@ -807,7 +962,7 @@
         <nav class="navbar">
         <a href="index.html">Home</a>
         <div class="nav-item">
-            <a href="#">Distributorship</a>
+            <a href="#" style="color:rgb(0, 17, 255);">Distributorship</a>
             <div class="dropdown-menu">
                 <a href="lighting.html">Lighting Fixtures</a>
                 <a href="led-wall.html">LED Video Wall</a>
@@ -815,13 +970,13 @@
                 <a href="wpc.html">Wood Plastic Composite</a>
                 <a href="tents.html">Semi-Permanent Tents</a>
                 <a href="pebbles.html">Decorative Stones & Pebbles</a>
-                <a href="irrigation.html">Irrigation System Products</a>
-
+                <a href="irrigation.html" style="color:rgb(0, 17, 255);">Irrigation System Products</a>
+                
             </div>
         </div>
 
         <div class="nav-item">
-            <a href="#" style="color:rgb(0, 17, 255);">Dealership</a>
+            <a href="#">Dealership</a>
             <div class="dropdown-menu">
                 <a href="repair-products.html">Repair Products</a>
                 <a href="tile-adhesive.html">Tile Adhesive</a>
@@ -831,147 +986,63 @@
                 <a href="structural-grout.html">Structural Grout</a>
                 <a href="admixtures.html">Admixture</a>
                 <a href="bonding-agent.html">Bonding Agent</a>
-                <a href="air-conditioners.html" style="color:rgb(0, 17, 255);">ENERCOOL Air Conditioners</a>
+                <a href="air-conditioners.html">ENERCOOL Air Conditioners</a>
             </div>
         </div>
-
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
         <a href="events.html">Events</a>
         <a href="contactus.html">Contact Us</a>
     </nav>
-    
-    <div class="hero-section">
+    <!--End of new navigation menu code-->
+    <!--deleted hero section
+        <div class="hero-section">
         
     </div>
+    -->
     <div class="page-title">
-        <h1>Enercool Air Conditioners</h1>
+        <h1>Irrigation System Products</h1>
     </div>
-    <div class="products-section">
-        <h2>OUR PRODUCTS</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="skybird products\enercool img.png" alt="Structural Grout">
-                        <div class="product-title">Wall Mounted Enercool 1.0 HP</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>Wall Mounted Enercool 1.0 HP</h3>
-                        <p>Room Capacity 9 - 14 sqm</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="skybird products\enercool img.png" alt="Repair Products">
-                        <div class="product-title">Wall Mounted Enercool 1.5 HP</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>Wall Mounted Enercool 1.5 HP</h3>
-                        <p>Room Capacity 15 - 19 sqm</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="skybird products\enercool img.png" alt="Floor Coatings & Hardeners">
-                        <div class="product-title">Wall Mounted Enercool 2.0 HP</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>Wall Mounted Enercool 2.0 HP</h3>
-                        <p>Room Capacity 20 - 28 sqm</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="skybird products\enercool img.png" alt="Floor Coatings & Hardeners">
-                        <div class="product-title">Wall Mounted Enercool 2.5 HP</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>Wall Mounted Enercool 2.5 HP</h3>
-                        <p>Room Capacity 29 - 35 sqm</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
 
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="skybird products\enercool img.png" alt="Floor Coatings & Hardeners">
-                        <div class="product-title">Wall Mounted Enercool 3.0 HP</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>Wall Mounted Enercool 3.0 HP</h3>
-                        <p>Room Capacity 36 - 43 sqm</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
 
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="skybird products\enercool img.png" alt="Floor Coatings & Hardeners">
-                        <div class="product-title">Wall Mounted Enercool 4.0 HP</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>Wall Mounted Enercool 4.0 HP</h3>
-                        <p>Room Capacity 44 - 58 sqm</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
+<section class="sample-gallery">
+  
+  <div class="gallery-grid">
+    <img src="irrigation\arrow drip.png" alt="Sample 1" class="clickable-img">
+    <img src="irrigation\cylindrical dripline pipe.png" alt="Sample 2" class="clickable-img">
+    <img src="irrigation\disc filter.png" alt="Sample 3" class="clickable-img">
+    <img src="irrigation\drip emitters.png" alt="Sample 4" class="clickable-img">
+    <img src="irrigation\emitter.png" alt="Sample 5" class="clickable-img">
+    <img src="irrigation\filters 2.png" alt="Sample 5" class="clickable-img">
+    <img src="irrigation\filters 3.png" alt="Sample 5" class="clickable-img">
+    <img src="irrigation\irrigation filters.png" alt="Sample 5" class="clickable-img">
+    <img src="irrigation\sprinkler1.png" alt="Sample 5" class="clickable-img">
+    <img src="irrigation\sprinkler2.png" alt="Sample 5" class="clickable-img">
+  </div>
+</section>
 
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="skybird products\enercool img.png" alt="Floor Coatings & Hardeners">
-                        <div class="product-title">Floor Mounted Enercool 4.0 HP</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>Floor Mounted Enercool 4.0 HP</h3>
-                        <p>Room Capacity 44 - 58 sqm</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
+<section class="fullwidth-image-section">
+  <h2 class="fullwidth-image-title">System Structure</h2>
+  <img src="irrigation\systemstructure.png" alt="Irrigation Equipment" class="fullwidth-image clickable-img">
+</section>
 
-            <div class="product-card">
-                <div class="product-card-inner">
-                    <div class="product-card-front">
-                        <img src="skybird products\enercool img.png" alt="Floor Coatings & Hardeners">
-                        <div class="product-title">Floor Mounted Enercool 5.0 HP</div>
-                        <div class="product-description"></div>
-                    </div>
-                    <div class="product-card-back">
-                        <h3>Floor Mounted Enercool 5.0 HP</h3>
-                        <p>Room Capacity 59 - 79 sqm</p>
-                        <button class="view-button" data-url="lighting.html">View Image</button>
-                    </div>
-                </div>
-            </div>
-            
-            </div>
-            </div>
-            </div>
-        </div>
+<!--deleted download catalog button section
+<section class="company-profile-section">
+    <h2>More Products</h2>
+    <a href="downloads\Tents Products.pdf" download class="download-button">
+        Download Product Catalog
+        <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </svg>
+    </a>
+</section>
+-->
+
+
+
+
+
     <div class="footer">
         <div class="footer-section">
             <h3>About Rivermade OPC</h3>
@@ -995,14 +1066,17 @@
             </div>
         </div>
     </div>
+
+
 <script src="home.js"></script>    <!-- Add this script at the end of your body tag -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.clickable-img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const closeButton = document.querySelector('.lightbox-close');
 
-    // Update your product card buttons to include data-image attribute
+    // ✅ Existing feature: open lightbox from "View" button in product cards
     document.querySelectorAll('.view-button').forEach(button => {
         button.addEventListener('click', function() {
             const cardImage = this.closest('.product-card-inner')
@@ -1012,7 +1086,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close lightbox when clicking close button or outside the image
+    // ✅ NEW FEATURE: open lightbox when any .clickable-img is clicked
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImage.src = img.src;
+            lightbox.classList.add('active');
+        });
+    });
+
+    // ✅ Close lightbox when clicking close button or outside image
     closeButton.addEventListener('click', () => {
         lightbox.classList.remove('active');
     });
@@ -1023,13 +1105,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close lightbox with Escape key
+    // ✅ Close lightbox with Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightbox.classList.contains('active')) {
             lightbox.classList.remove('active');
         }
     });
 });
+
 </script>
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close">&times;</button>
