@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../clients"
+		},
+		{
+			"path": "../../accreditations"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "company basic website"
+	}
+}
